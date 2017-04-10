@@ -14,7 +14,7 @@ public class Bomb : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		Invoke ("Explode", 3f);
-		player = GameObject.Find ("BomberMan");
+		player = GameObject.Find ("BomberMan_1");
 		range = player.GetComponent<PlayerController> ().range;
 	}
 

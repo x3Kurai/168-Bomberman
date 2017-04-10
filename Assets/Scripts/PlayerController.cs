@@ -38,22 +38,22 @@ public class PlayerController : MonoBehaviour {
 
 
 	private void UpdatePlayer1Movement() {
-		if (Input.GetKey(KeyCode.UpArrow)) { //Up movement
+		if (Input.GetKey(KeyCode.W)) { //Up movement
 			rigidBody.velocity = new Vector3(rigidBody.velocity.x, rigidBody.velocity.y, moveSpeed);
 			myTransform.rotation = Quaternion.Euler(0, 0, 0);
 		}
 
-		if (Input.GetKey(KeyCode.LeftArrow)) { //Left movement
+		if (Input.GetKey(KeyCode.A)) { //Left movement
 			rigidBody.velocity = new Vector3(-moveSpeed, rigidBody.velocity.y, rigidBody.velocity.z);
 			myTransform.rotation = Quaternion.Euler(0, 270, 0);
 		}
 
-		if (Input.GetKey(KeyCode.DownArrow)) { //Down movement
+		if (Input.GetKey(KeyCode.S)) { //Down movement
 			rigidBody.velocity = new Vector3(rigidBody.velocity.x, rigidBody.velocity.y, -moveSpeed);
 			myTransform.rotation = Quaternion.Euler(0, 180, 0);
 		}
 
-		if (Input.GetKey(KeyCode.RightArrow)) { //Right movement
+		if (Input.GetKey(KeyCode.D)) { //Right movement
 			rigidBody.velocity = new Vector3(moveSpeed, rigidBody.velocity.y, rigidBody.velocity.z);
 			myTransform.rotation = Quaternion.Euler(0, 90, 0);
 		}
