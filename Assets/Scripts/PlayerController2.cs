@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class PlayerController2 : MonoBehaviour {
 
     public Text noOfBombs;
+    public Text winner;
+
     public float moveSpeed = 5f;
     public bool canDropBombs = true; //Can the player drop bombs?
     public bool canMove = true; //Can the player move?
@@ -77,6 +79,7 @@ public class PlayerController2 : MonoBehaviour {
         if (other.CompareTag ("Explosion")) {
             dead = true;
             gameObject.SetActive (false);
+            winner.text = "Player 1 Wins! \nPress R to Restart";
         } else if (other.CompareTag ("BombUpgrade")) {
             bombs += 2;
             SetBombText ();
@@ -99,7 +102,7 @@ public class PlayerController2 : MonoBehaviour {
     }
 
     public void SetBombText(){
-        noOfBombs.text = "Bombs Available: " + bombs.ToString () + "\n\r" + "Press Escape to pause" + "\n\r" + "Press Q to restart level" ;
+        noOfBombs.text = "Bombs Available: " + bombs.ToString () + "\n\r" + "Range: " + (range-1).ToString();
     }
 
 }
